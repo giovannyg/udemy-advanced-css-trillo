@@ -10,10 +10,10 @@
 // SEARCH
 .search {
     flex: 0 0 40%;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 100px;
 
     @media only screen and (max-width: $bp-smallest) {
         order: 1;
@@ -137,6 +137,11 @@
         margin: 0;
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
 
@@ -199,6 +204,11 @@
             flex-direction: column;
             padding: 1.5rem .5rem;
         }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }
     }
 
     &__icon {
@@ -250,12 +260,13 @@
     align-items: center;
     border-bottom: var(--line);
 
+
     &__heading {
-        font-size: 2.25rem;
+        font-size: 1.25rem;
         font-weight: 300;
         text-transform: uppercase;
         letter-spacing: 1px;
-        padding: 1.5rem 3rem;
+        padding: 1.5rem 3.5rem;
 
         @media only screen and (max-width: $bp-small) {
             font-size: 1.8rem;
@@ -290,21 +301,19 @@
 
     &__rating {
         background-color: var(--color-primary);
-        color: #fff;
+        color: white;
         margin-left: 3rem;
         padding: 0 2.25rem;
         align-self: stretch;
-
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         @media only screen and (max-width: $bp-small) {
-            padding: 0 1.5rem;
+            padding: 0rem 1.5rem;
         }
     }
-
     &__rating-average {
         font-size: 2.25rem;
         font-weight: 300;
@@ -314,18 +323,15 @@
             font-size: 1.8rem;
         }
     }
-
-    &__rating-count {
+    &__rating-count{
         font-size: .8rem;
         text-transform: uppercase;
-
+        
         @media only screen and (max-width: $bp-small) {
             font-size: .5rem;
         }
     }
 }
-
-
 
 ////////////////////////////////////////
 // BUTTON INLINE
@@ -364,17 +370,16 @@
         transform: scale(1);
         box-shadow: none;
     }
-
     50% {
         transform: scale(1.05);
         box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
     }
-
     100% {
         transform: scale(1);
         box-shadow: none;
     }
 }
+
 
 ////////////////////////////////////////
 // PARAGRAPH
@@ -383,13 +388,13 @@
 }
 
 
-
 ////////////////////////////////////////
 // LIST
+
 .list {
     list-style: none;
     margin: 3rem 0;
-    padding: 3rem 0;
+    padding: 3rem;
     border-top: var(--line);
     border-bottom: var(--line);
 
@@ -400,7 +405,6 @@
         flex: 0 0 50%;
         margin-bottom: .7rem;
     }
-
     &__item::before {
         content: "";
         display: inline-block;
@@ -412,19 +416,18 @@
         background-image: url(../img/chevron-thin-right.svg);
         background-size: cover;
 
-        //Newer browsers - masks
+        // Newer browsers - masks
         @supports (-webkit-mask-image: url()) or (mask-image: url()) {
             background-color: var(--color-primary);
             -webkit-mask-image: url(../img/chevron-thin-right.svg);
             -webkit-mask-size: cover;
             mask-image: url(../img/chevron-thin-right.svg);
             mask-size: cover;
+
             background-image: none;
         }
-        
     }
 }
-
 
 
 ////////////////////////////////////////
@@ -450,16 +453,16 @@
         width: 4rem;
         border-radius: 50%;
         border: 3px solid #fff;
-
+        
         &:not(:last-child) {
             margin-right: -2rem;
         }
     }
 }
 
-
 ////////////////////////////////////////
 // REVIEWS
+
 .review {
     background-color: #fff;
     box-shadow: var(--shadow-light);
@@ -478,7 +481,6 @@
         z-index: 10;
         position: relative;
     }
-
     &__user {
         display: flex;
         align-items: center;
@@ -526,12 +528,13 @@
     }
 }
 
-
 ////////////////////////////////////////
 // CALL TO ACTION
+
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
 
     @media only screen and (max-width: $bp-medium) {
         padding: 2.5rem 0;
@@ -545,12 +548,12 @@
     }
 }
 
-
 ////////////////////////////////////////
 // CALL TO ACTION
 .btn {
     font-size: 1.5rem;
     font-weight: 300;
+    border: none;
     text-transform: uppercase;
     border-radius: 100px;
     border: none;
@@ -570,14 +573,13 @@
     &__visible {
         padding: 2rem 7.5rem;
     }
-
     &__invisible {
         position: absolute;
         padding: 2rem 0;
         left: 0;
         top: -100%;
     }
-
+    
     &:hover {
         background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
     }
@@ -585,11 +587,9 @@
     &:hover &__visible {
         transform: translateY(100%);
     }
-
     &:hover &__invisible {
         top: 0;
     }
-
     &:focus {
         outline: none;
         animation: pulsate 1s infinite;
